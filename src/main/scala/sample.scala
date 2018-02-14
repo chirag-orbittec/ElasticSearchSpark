@@ -26,7 +26,7 @@ object sample {
       //.set("es.query",query)
       //.set("es.nodes", "localhost")
       //.set("es.port", "9200")
-      //.set("es.resource","lamscope_index_data/modulelogs" )
+     
       //.set("es.endpoint", "_search")
 
     val spark = SparkSession
@@ -49,26 +49,18 @@ object sample {
 
 
 
-//    val query = "{\"size\":1," +
-//      "\"query\": {\n\"bool\": {" +
-//      "\"must\": {" +
-//      "\"match\": {" +
-//      "\"toolId\": \"ETCL94002\"" +
-//      "}" +
-//      "},\"filter\": [{\"terms\": {\"channelName\": [\"BiasRFVoltageProbe_AI\"]" +
-//      "}}]}}}";
 
 
 
 
-//  val rdd = sc.esRDD(sc,"lamscope_index_data/modulelogs",query)
+
 //
 //
 //    val temp = EsSpark.
 //    val newRdd = rdd.foreach(element => element._2)
 //
 
-    val df =   spark.read.format("org.elasticsearch.spark.sql").load("lamscope_index_data/modulelogs")
+    val df =   spark.read.format("org.elasticsearch.spark.sql").load("**********")
 
     df.printSchema()
 
